@@ -1301,6 +1301,17 @@ config_updater:
         vsphere:
         - ci
       name: prow-job-cluster-launch-installer-gcp-nested-virt-custom-test-image
+    ci-operator/templates/openshift/installer/cluster-launch-installer-kubevirt-e2e.yaml:
+      clusters:
+        api.ci:
+        - ci
+        app.ci:
+        - ci
+        build01:
+        - ci
+        build02:
+        - ci
+      name: prow-job-cluster-launch-installer-kubevirt-e2e
     ci-operator/templates/openshift/installer/cluster-launch-installer-libvirt-e2e.yaml:
       clusters:
         api.ci:
@@ -1392,17 +1403,6 @@ config_updater:
         vsphere:
         - ci
       name: prow-job-cluster-launch-installer-ovirt-e2e
-    ci-operator/templates/openshift/installer/cluster-launch-installer-kubevirt-e2e.yaml:
-      clusters:
-        api.ci:
-          - ci
-        app.ci:
-          - ci
-        build01:
-          - ci
-        build02:
-          - ci
-      name: prow-job-cluster-launch-installer-kubevirt-e2e
     ci-operator/templates/openshift/installer/cluster-launch-installer-remote-libvirt-e2e.yaml:
       clusters:
         api.ci:
@@ -1674,6 +1674,17 @@ config_updater:
         vsphere:
         - ci
       name: cluster-profile-gcp
+    cluster/test-deploy/kubevirt-ipi-provider/*:
+      clusters:
+        api.ci:
+        - ci
+        app.ci:
+        - ci
+        build01:
+        - ci
+        build02:
+        - ci
+      name: cluster-profile-kubevirt
     cluster/test-deploy/ovirt/*:
       clusters:
         api.ci:
@@ -1687,17 +1698,6 @@ config_updater:
         vsphere:
         - ci
       name: cluster-profile-ovirt
-    cluster/test-deploy/kubevirt-ipi-provider/*:
-      clusters:
-        api.ci:
-        - ci
-        app.ci:
-        - ci
-        build01:
-        - ci
-        build02:
-        - ci
-      name: cluster-profile-kubevirt
     cluster/test-deploy/packet/*:
       clusters:
         api.ci:
@@ -4484,6 +4484,31 @@ plugins:
   - verify-owners
   - wip
   - yuks
+  openshift-priv/cluster-api-provider-kubevirt:
+  - approve
+  - assign
+  - blunderbuss
+  - bugzilla
+  - cat
+  - dog
+  - golint
+  - goose
+  - heart
+  - help
+  - hold
+  - label
+  - lgtm
+  - lifecycle
+  - override
+  - owners-label
+  - pony
+  - retitle
+  - shrug
+  - sigmention
+  - skip
+  - verify-owners
+  - wip
+  - yuks
   openshift-priv/cluster-api-provider-libvirt:
   - approve
   - assign
@@ -4535,31 +4560,6 @@ plugins:
   - wip
   - yuks
   openshift-priv/cluster-api-provider-ovirt:
-  - approve
-  - assign
-  - blunderbuss
-  - bugzilla
-  - cat
-  - dog
-  - golint
-  - goose
-  - heart
-  - help
-  - hold
-  - label
-  - lgtm
-  - lifecycle
-  - override
-  - owners-label
-  - pony
-  - retitle
-  - shrug
-  - sigmention
-  - skip
-  - verify-owners
-  - wip
-  - yuks
-  openshift-priv/cluster-api-provider-kubevirt:
   - approve
   - assign
   - blunderbuss
@@ -9642,13 +9642,13 @@ plugins:
   - approve
   openshift/cluster-api-provider-kubemark:
   - approve
+  openshift/cluster-api-provider-kubevirt:
+  - approve
   openshift/cluster-api-provider-libvirt:
   - approve
   openshift/cluster-api-provider-openstack:
   - approve
   openshift/cluster-api-provider-ovirt:
-  - approve
-  openshift/cluster-api-provider-kubevirt:
   - approve
   openshift/cluster-authentication-operator:
   - approve
