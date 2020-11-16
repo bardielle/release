@@ -21,7 +21,9 @@ case "${CLUSTER_TYPE}" in
 aws) export AWS_SHARED_CREDENTIALS_FILE=${CLUSTER_PROFILE_DIR}/.awscred;;
 azure4) export AZURE_AUTH_LOCATION=${CLUSTER_PROFILE_DIR}/osServicePrincipal.json;;
 gcp) export GOOGLE_CLOUD_KEYFILE_JSON=${CLUSTER_PROFILE_DIR}/gce.json;;
-kubevirt) export KUBEVIRT_KUBECONFIG=${HOME}/.kube/config;;
+kubevirt)
+  mkdir -p ${HOME}/.kube/
+  cp ${CLUSTER_PROFILE_DIR}/kubeconfig  ${HOME}/.kube/config;;
 vsphere) ;;
 openstack) export OS_CLIENT_CONFIG_FILE=${CLUSTER_PROFILE_DIR}/clouds.yaml ;;
 openstack-vexxhost) export OS_CLIENT_CONFIG_FILE=${CLUSTER_PROFILE_DIR}/clouds.yaml ;;
