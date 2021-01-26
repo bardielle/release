@@ -257,6 +257,20 @@
             "prowJob": {
                 "name": "periodic-ci-openshift-release-master-ocp-4.7-e2e-vsphere-upi-serial-priv"
             }
+        },
+        "kubevirt-ipi-ovn": {
+            "disabled": true,
+            "optional": true,
+            "prowJob": {
+                "name": "periodic-ci-openshift-release-master-ocp-4.7-e2e-kubevirt-ipi-ovn-priv"
+            }
+        },
+        "kubevirt-ipi-sdn": {
+            "disabled": true,
+            "optional": true,
+            "prowJob": {
+                "name": "periodic-ci-openshift-release-master-ocp-4.7-e2e-kubevirt-ipi-sdn-priv"
+            }
         }
     }
 }

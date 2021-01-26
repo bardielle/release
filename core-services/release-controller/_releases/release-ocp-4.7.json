@@ -167,6 +167,14 @@
     "azure-arc-conformance":{
       "optional":true,
       "prowJob":{"name":"periodic-ci-openshift-release-master-ocp-4.7-openshift-ipi-azure-arcconformance"}
+    },
+    "kubevirt-ipi-ovn":{
+      "optional":true,
+      "prowJob":{"name":"periodic-ci-openshift-release-master-ocp-4.7-e2e-kubevirt-ipi-ovn"}
+    },
+    "kubevirt-ipi-sdn":{
+      "optional":true,
+      "prowJob":{"name":"periodic-ci-openshift-release-master-ocp-4.7-e2e-kubevirt-ipi-sdn"}
     }
   }
 }

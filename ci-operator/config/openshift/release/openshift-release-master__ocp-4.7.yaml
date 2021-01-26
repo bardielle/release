@@ -151,6 +151,20 @@ tests:
   steps:
     cluster_profile: azure4
     workflow: ipi-azure-arcconformance
+- as: e2e-kubevirt-ipi-ovn
+  cron: 0 30 4 ? * SUN
+  steps:
+    cluster_profile: kubevirt
+    env:
+      NETWORK_TYPE: OVNKubernetes
+    workflow: openshift-e2e-kubevirt-networktype
+- as: e2e-kubevirt-ipi-sdn
+  cron: 0 30 6 ? * SUN
+  steps:
+    cluster_profile: kubevirt
+    env:
+      NETWORK_TYPE: OpenShiftSDN
+    workflow: openshift-e2e-kubevirt-networktype
 zz_generated_metadata:
   branch: master
   org: openshift
